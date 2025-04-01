@@ -1,6 +1,5 @@
 name: 'Streak Keeper (Never lose your streak.)'
 run-name: 'Your study script is running! Click me to see its progress.'
-
 on:
   schedule:
     - cron: '0 0 * * *' 
@@ -9,19 +8,42 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
         
       - run: npm install node-fetch
-        
-
-      - run: node xp.js
+      
+      # Task 1
+      - name: Run Task 1
+        run: node xp.js
         env:
           lessonsToComplete: 1000 
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
+      
+      # Task 2
+      - name: Run Task 2
+        run: node xp.js
+        env:
+          lessonsToComplete: 1000 
+          token: ${{ secrets.TOKEN2 }}
+          userId: ${{ secrets.USER_ID2 }}
+      
+      # Task 3
+      - name: Run Task 3
+        run: node xp.js
+        env:
+          lessonsToComplete: 1000 
+          token: ${{ secrets.TOKEN3 }}
+          userId: ${{ secrets.USER_ID3 }}
+      
+      # Task 4
+      - name: Run Task 4
+        run: node xp.js
+        env:
+          lessonsToComplete: 1000 
+          token: ${{ secrets.TOKEN4 }}
+          userId: ${{ secrets.USER_ID4 }}
