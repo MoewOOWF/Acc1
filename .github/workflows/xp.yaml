@@ -1,31 +1,51 @@
 name: 'Get XP'
-run-name: Your hack is running! Click me to see it's progress.
-
+run-name: Your hack is running! Click me to see its progress.
 on:
   workflow_dispatch:
     inputs:
       lessonsToComplete:
-        description: 'Amount of fake lessons to complete. (Each give 200 XP)'
+        description: 'Amount of fake lessons to complete per account. (Each give 200 XP)'
         required: true
         default: 5
-
 jobs:
-  check-bats-version:
+  run-script:
     runs-on: ubuntu-latest
-
     steps:
-
       - uses: actions/checkout@v4
-
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
         
       - run: npm install node-fetch
-
-      - run: npm run xp
+      
+      # Task 1
+      - name: Run Task 1
+        run: node xp.js
         env:
           lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
+      
+      # Task 2
+      - name: Run Task 2
+        run: node xp.js
+        env:
+          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
+          token: ${{ secrets.TOKEN2 }}
+          userId: ${{ secrets.USER_ID2 }}
+      
+      # Task 3
+      - name: Run Task 3
+        run: node xp.js
+        env:
+          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
+          token: ${{ secrets.TOKEN3 }}
+          userId: ${{ secrets.USER_ID3 }}
+      
+      # Task 4
+      - name: Run Task 4
+        run: node xp.js
+        env:
+          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
+          token: ${{ secrets.TOKEN4 }}
+          userId: ${{ secrets.USER_ID4 }}
