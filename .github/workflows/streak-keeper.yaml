@@ -20,7 +20,7 @@ jobs:
       - name: Run Task 1
         run: node xp.js
         env:
-          lessonsToComplete: 500 
+          lessonsToComplete: 200 
           token: ${{ secrets.TOKEN }}
           userId: ${{ secrets.USER_ID }}
       
@@ -28,7 +28,7 @@ jobs:
       - name: Run Task 2
         run: node xp.js
         env:
-          lessonsToComplete: 300 
+          lessonsToComplete: 200 
           token: ${{ secrets.TOKEN2 }}
           userId: ${{ secrets.USER_ID2 }}
       
@@ -36,14 +36,6 @@ jobs:
       - name: Run Task 3
         run: node xp.js
         env:
-          lessonsToComplete: 300 
+          lessonsToComplete: 200 
           token: ${{ secrets.TOKEN3 }}
           userId: ${{ secrets.USER_ID3 }}
-      
-      # Task 4
-      - name: Run Task 4
-        run: node xp.js
-        env:
-          lessonsToComplete: 300 
-          token: ${{ secrets.TOKEN4 }}
-          userId: ${{ secrets.USER_ID4 }}
