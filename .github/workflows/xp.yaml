@@ -33,19 +33,4 @@ jobs:
           lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
           token: ${{ secrets.TOKEN2 }}
           userId: ${{ secrets.USER_ID2 }}
-      
-      # Task 3
-      - name: Run Task 3
-        run: node xp.js
-        env:
-          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
-          token: ${{ secrets.TOKEN3 }}
-          userId: ${{ secrets.USER_ID3 }}
-      
-      # Task 4
-      - name: Run Task 4
-        run: node xp.js
-        env:
-          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
-          token: ${{ secrets.TOKEN4 }}
-          userId: ${{ secrets.USER_ID4 }}
+          
